@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/lush_fa.png">
+    <title>LUSH</title>
+    <style>
+        body{
+            background-color: #000;
+        }
+    </style>
+    <script>
+    alert('현재 페이지는 비활성화되어 있습니다');
+    setTimeout(() => {
+        if (document.referrer) {
+            history.back(); // 이전 페이지로 이동
+        } else {
+            // 이전 페이지가 없을 경우 홈으로 이동
+            window.location.href = '/index.html';
+        }
+    }, 600); // 0.5초 후 이동
+    </script>
+</head>
+<body>
+</body>
+</html>

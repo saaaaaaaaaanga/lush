@@ -1,0 +1,1271 @@
+body{
+    overflow-x: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+a {
+    color: inherit;
+}
+
+/* 한글 폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    src: url('./fonts/noto-sans-kr.ttf') format('woff'),
+        url('./fonts/noto-sans-kr.ttf') format('woff2');
+    unicode-range: U+AC00-D7A3;
+}
+
+/* 영문폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    src: url('https://fonts.gstatic.com/s/roboto/v30/KFOkCnqEu92Fr1MmgWxP.ttf') format('woff2');
+    unicode-range: U+0000-007F;
+}
+
+body {
+    background-color: #000;
+}
+
+/* sub code */
+#wrap {
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+.con {
+    max-width: 92.7%;
+    margin: 0 auto;
+}
+
+/* ----------------- header logo & nav -----------------*/
+header {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    z-index: 99;
+    transition: top 0.2s ease-in-out;
+    top: 0;
+    background-color: #000;
+}
+
+header .header_logo {
+    margin-left: 70px;
+    width: 119px;
+    line-height: 42px;
+    flex-shrink: 0;
+}
+
+header .header_logo img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.gnb {
+    width: 796px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.nav-up {
+    top: -90px;
+}
+.gnb ul {
+    display: flex;
+}
+
+.gnb ul li {
+    margin-right: 37px;
+    text-align: center;
+    padding: 5px 25px;
+}
+
+.gnb ul li a {
+    display: block;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.gnb ul li:hover a {
+    font-weight: 700;
+}
+/* -----------------video -----------------*/
+.introvideo{
+    margin-top: 100px;
+    margin-left: -50px;
+}
+/* -----------------YOUR WISH, OUR LUSH -----------------*/
+.lush_title {
+    opacity: 0;
+    transition: 0.1s;
+}
+
+.lush_title h2 {
+    margin: 0 auto;
+    font-size: 200px;
+    text-align: center;
+    color: #fff;
+    font-family: 'Parkway Lush', sans-serif;
+}
+
+.lush_title span {
+    color: #09E200;
+}
+
+.lush_title .lush_m {
+    margin-top: 129px;
+    color: #fff;
+    text-align: center;
+}
+.lush_title .lush_m p{
+    font-size: 16px;
+}
+.lush_m:last-child {
+    line-height: 22px;
+    letter-spacing: -2%;
+}
+
+/* ----------------- 러쉬 소개 -----------------*/
+.lushsection {
+    width: 1781px;
+    height: 800px;
+    border: 1px solid;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 200px auto 0;
+    gap: 1px;
+}
+
+article {
+    width: 500px;
+    height: 800px;
+    position: relative;
+    margin-top: 380px;
+}
+
+article .pic {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+article .pic img {
+    width: 100%;
+    height: 36%;
+    object-fit: cover;
+    transition: transform 0.2s ease;
+}
+
+article:first-child .pic img {
+    position: relative;
+    top: -10px;
+    left: -10px;
+}
+
+article:nth-child(2) .pic img {
+    position: relative;
+    bottom: -470px;
+    left: -10px;
+}
+
+article:nth-child(3) .pic img {
+    position: relative;
+    bottom: -34px;
+    right: -25px;
+    transform: rotate(15deg);
+}
+
+article:nth-child(4) .pic img {
+    position: relative;
+    bottom: -480px;
+    left: -5px;
+    transform: rotate(25deg);
+}
+
+article .txt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    backdrop-filter: blur(20px) !important;
+    /* 블러 효과 추가 */
+    border-radius: 10px;
+    padding: 20px;
+    overflow: hidden;
+    width: 361px;
+    /* 너비를 고정 */
+    height: 520px;
+    /* 높이를 고정 */
+    border-radius: 50px;
+    text-align: center;
+    color: #fff;
+}
+
+article .txt::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: linear-gradient(0deg, rgb(0, 0, 0), rgb(53, 53, 53));
+    opacity: 0.5;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+article .txt h3 {
+    margin: 0;
+    margin-top: 100px;
+    margin-bottom: 44px;
+    font-size: 1.5rem;
+}
+
+article .txt span {
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+
+/* button */
+.txt button {
+    padding: 5px;
+    margin-top: 140px;
+    border: none;
+    background: none;
+    color: #A1A1A1;
+    font-size: 15px;
+    font-weight: 300;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.txt button a {
+    display: block;
+}
+
+.txt button:hover {
+    color: #fff;
+}
+
+/* ----------------- 러쉬 소개 자세히 보기 hover 효과 -----------------*/
+.moving-circle {
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    top: 330px;
+    left: 44%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.circle-pathW {
+    stroke-dasharray: 494;
+    /* 경로의 총 길이 */
+    stroke-dashoffset: 494;
+    /* 초기에는 경로가 보이지 않게 설정 */
+    stroke: #fff;
+    stroke-width: 3;
+    fill: none;
+    transform: rotate(200deg);
+    /* 회전 */
+    transform-origin: center;
+    /* 회전의 기준점 설정 */
+    transition: stroke-dashoffset 0s ease-in-out;
+    /* 초기에는 애니메이션 없이 설정 */
+}
+
+.txt button:hover~.moving-circle .circle-pathW {
+    animation: drawPath 0.5s ease-in-out forwards;
+}
+
+
+.circle {
+    position: relative;
+}
+
+.circle .one1,
+.one3,
+.one6 {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.circle .one2,
+.one4,
+.one5 {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+}
+
+.one1 {
+    background-color: #FFE037;
+    position: absolute;
+    top: 600px;
+    left: 18px;
+}
+
+.one2 {
+    background-color: #A8E9F2;
+    position: absolute;
+    top: 750px;
+    right: 110px;
+}
+
+.one3 {
+    background-color: #A896FC;
+    position: absolute;
+    left: 18px;
+    top: 50px;
+}
+
+.one4 {
+    background-color: #60B482;
+    position: absolute;
+    left: 136px;
+    top: 680px;
+}
+
+.one5 {
+    background-color: #E765BA;
+    position: absolute;
+    right: 20px;
+    top: 100px;
+}
+
+.one6 {
+    background-color: #FF9170;
+    position: absolute;
+    right: 20px;
+    top: 500px;
+}
+
+/* ----------------- 제품 부분 -----------------*/
+.chocicle .moving-circle {
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    top: 324px;
+    left: 44%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.circle-path {
+    stroke-dasharray: 494;
+    /* 경로의 총 길이 */
+    stroke-dashoffset: 494;
+    /* 초기에는 경로가 보이지 않게 설정 */
+    stroke: #000;
+    stroke-width: 3;
+    fill: none;
+    transform: rotate(200deg);
+    /* 회전 */
+    transform-origin: center;
+    /* 회전의 기준점 설정 */
+    transition: stroke-dashoffset 0s ease-in-out;
+    /* 초기에는 애니메이션 없이 설정 */
+}
+
+.protxt button:hover~.chocicle .moving-circle .circle-path {
+    animation: drawPath 0.7s ease-in-out forwards;
+}
+
+
+@keyframes drawPath {
+    0% {
+        stroke-dashoffset: 494;
+    }
+
+    30% {
+        stroke-dashoffset: 660;
+    }
+
+    100% {
+        stroke-dashoffset: 660;
+    }
+}
+
+
+
+/* ------------------------제품------------------------ */
+.protxt button {
+    padding: 5px;
+    border: none;
+    background: none;
+    color: #1A1A1A;
+    font-size: 15px;
+    font-weight: 400;
+    position: relative;
+    z-index: 1;
+    margin-top: 30px;
+}
+
+.protxt button a {
+    display: block;
+}
+
+.protxt button:hover {
+    color: #000;
+    font-weight: 500;
+}
+
+.product {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 200px;
+}
+
+.productcho {
+    color: #fff;
+}
+
+.productcho h3 {
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.productBtn {
+    display: flex;
+    margin-top: 30px;
+}
+
+.productBtn li {
+    border: 1px solid #fff;
+    border-radius: 17px;
+    padding: 1px 18px;
+    margin-left: 19px;
+    font-weight: 400;
+}
+
+.productBtn li:first-child {
+    margin-left: 0;
+}
+
+.productBtn li a {
+    display: block;
+}
+
+.productBtn li:hover {
+    border: 1px solid #09E200;
+    color: #000;
+    background-color: #09E200;
+}
+.productBtn li.active{
+    border: 1px solid #09E200;
+    color: #000;
+    background-color: #09E200;
+}
+.productcon {
+    width: 100%;
+    max-width: 1920px;
+    margin-top: -630px;
+    overflow: hidden;
+}
+
+.prosiperde{
+    padding-top: 100px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-left: -55px;
+}
+
+.prpslide{
+    text-align: center;
+    flex: 1;
+    width: 290px;
+    height: 437px;
+    flex: 0 0 calc(100% / 7);
+    box-sizing: border-box;
+    padding: 0 10px;
+    transition: 0.3s;
+    margin-left: 50px;
+    border-radius: 6px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+
+.proE1 {
+    background-image: linear-gradient(25deg, #BEFFB3, #A096FF);
+    background-size: 150% 150%;
+    animation: gradient 0.9s ease infinite;
+}
+.proE2 {
+    background-image: linear-gradient(225deg, #FF74BB, #FFBEBC, #BAC591 80%);
+    background-size: 120% 120%;
+    animation: gradient 0.9s ease infinite;
+}
+.proE3 {
+    background-image: linear-gradient(90deg, #FFB0B0, #FFC24E);
+    background-size: 150% 150%;
+    animation: gradient 0.9s ease infinite;
+}
+.proE4 {
+    background-image: linear-gradient(45deg, #FBB4BC 25%, #38E2F8);
+    background-size: 150% 150%;
+    animation: gradient 0.9s ease infinite;
+}
+.proE5 {
+    background-image: linear-gradient(135deg, #FFA0A2, #FF75F1);
+    background-size: 150% 150%;
+    animation: gradient 0.9s ease infinite;
+}
+.proE6 {
+    background-image: linear-gradient(225deg, #FC5A42, #F6C20A);
+    background-size: 120% 120%;
+    animation: gradient 0.9s ease infinite;
+}
+.proE7 {
+    background-image: linear-gradient(160deg, #E6758B, #FFB9E9, #F1CA94 80%);
+    background-size: 150% 150%;
+    animation: gradient 0.9s ease infinite;
+}
+.proE8 {
+    background-image: linear-gradient(45deg, #48DCFF, #EAEE73);
+    background-size: 150% 150%;
+    animation: gradient 0.9s ease infinite;
+}
+.proE9 {
+    background-image: linear-gradient(160deg, #4ACEE3, #E5A83A, #ED6A65 80%);
+    background-size: 150% 150%;
+    animation: gradient 0.9s ease infinite;
+}
+.proE10 {
+    background-image: linear-gradient(25deg, #A0B0FF, #FFC1C2);
+    background-size: 150% 150%;
+    animation: gradient 0.9s ease infinite;
+}
+.proE11 {
+    background-image: linear-gradient(135deg, #ff3697, #8697DF);
+    background-size: 150% 150%;
+    animation: gradient 0.9s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+.swiper-slide .pro_pic {
+    position: absolute;
+    top: -160px;
+    left: -45px;
+    z-index: 1;
+}
+
+.swiper-slide .pro_pic img {
+    width: 361px;
+}
+
+.swiper-slide .pro_pic .pro1 {
+    position: absolute;
+    left: 15px;
+    width: 330px;
+}
+
+.swiper-slide .pro_pic .pro5 {
+    position: absolute;
+    left: -34px;
+    width: 430px;
+}
+
+.swiper-slide .pro_pic .pro9 {
+    position: absolute;
+    left: 8px;
+    width: 350px;
+}
+.swiper-slide .pro_pic .pro11{
+    position: absolute;
+    top: -10px;
+    left: 8px;
+    width: 358px;
+}
+.protxt {
+    margin-top: 160px;
+}
+
+.protxt h3 {
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 36px;
+}
+
+.protxt span {
+    font-size: 16px;
+    letter-spacing: -4%;
+    font-weight: 500;
+}
+
+.protxt p {
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 38px;
+}
+
+.protxt .proP {
+    margin-top: 48px;
+}
+
+.protxt .probtn {
+    margin-top: 40px;
+}
+
+/* ----------------- review -----------------*/
+.reviewcon {
+    position: relative;
+    margin: 0 auto;
+    height: 900px;
+
+}
+
+p {
+    font-size: 14px;
+    letter-spacing: -1%;
+}
+
+/* ------review1------ */
+.review1 {
+    position: absolute;
+    top: 172px;
+    left: 188px;
+    width: 247px;
+    height: 150px;
+    background-color: #fff;
+    border-radius: 15px;
+    padding-top: 58px;
+    padding-left: 44px;
+}
+
+.review1 .reviewpic {
+    position: absolute;
+    top: 10px;
+    left: 70%;
+}
+
+.review1 .reviewpic1-1 {
+    position: absolute;
+    top: -20px;
+    left: 26px;
+}
+
+/* ------review2------ */
+.review2 {
+    position: absolute;
+    top: 404px;
+    left: 188px;
+    width: 302px;
+    height: 224px;
+    border-radius: 15px;
+    position: absolute;
+    background-color: #fff;
+    padding-top: 45px;
+    padding-left: 23px;
+}
+
+.review2 img {
+    width: 28%;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.starcon {
+    position: absolute;
+    bottom: -18px;
+    left: 30px;
+}
+
+.starcon ul {
+    display: flex;
+}
+
+.starcon ul li {
+    padding: 3px;
+}
+
+.star {
+    position: relative;
+    display: inline-block;
+    width: 0px;
+    height: 0px;
+    margin: 50px 0;
+    color: #ffd67a;
+    border-right: 11px solid transparent;
+    /* 너비 변경 */
+    border-left: 11px solid transparent;
+    /* 너비 변경 */
+    border-bottom: 8px solid #ffd67a;
+    /* 높이 변경 */
+    transform: rotate(35deg);
+}
+
+.star::before,
+.star::after {
+    content: "";
+    position: absolute;
+    width: 0px;
+    top: 0;
+    height: 0px;
+    color: #ffd67a;
+    left: -11px;
+    /* 너비와 동일하게 조정 */
+    border-right: 11px solid transparent;
+    /* 너비 변경 */
+    border-left: 11px solid transparent;
+    /* 너비 변경 */
+    border-bottom: 8px solid #ffd67a;
+    /* 높이 변경 */
+}
+
+.star::before {
+    transform: rotate(71deg);
+}
+
+.star::after {
+    transform: rotate(-71deg);
+}
+
+/* ------review3------ */
+.review3 {
+    width: 621px;
+    height: 127px;
+    background-color: #fff;
+    border-radius: 15px;
+    position: absolute;
+    padding-top: 34px;
+    padding-left: 37px;
+    top: 704px;
+    left: 211px;
+}
+
+.review3 img {
+    position: absolute;
+    top: 170px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.review3 .pol{
+    position: absolute;
+    top: 120px;
+}
+/* ------review4------ */
+.review4{
+    width: 274px;
+    height: 327px;
+    background-color: #fff;
+    border-radius: 15px;
+    position: absolute;
+    top: 292px;
+    left: 583px;
+    padding-top: 97px;
+    padding-left: 22px;
+}
+.review4 img{
+    position: absolute;
+    top: -28%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.review4 .reviewpic1-1{
+    position: absolute;
+    top: 293px;
+    left: 178px;
+    transform: rotate(180deg);
+}
+/* ------review5------ */
+.review5{
+    position: absolute;
+    top: 160px;
+    left: 923px;
+    width: 274px;
+    height: 394px;
+    background-color: #fff;
+    border-radius: 15px;
+}
+.review5 img{
+    position: absolute;
+    left: 10px;
+    top: 8px;
+}
+.review5 p{
+    position: absolute;
+    top: 324px;
+    left: 33px;
+}
+/* ------review6------ */
+.review6{
+    width: 267px;
+    height: 306px;
+    background-color: #fff;
+    border-radius: 15px;
+    position: absolute;
+    top: 612px;
+    left: 915px;
+    padding-top: 160px;
+    padding-left: 23px;
+}
+.review6 img{
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.review6 .pol{
+    position: absolute;
+    top: 300px;
+}
+.review6 .starcon{
+    position: absolute;
+    left: 60px;
+    top: 82px;
+}
+/* ------review7------ */
+.review7{
+    width: 459px;
+    height: 154px;
+    background-color: #fff;
+    border-radius: 15px;
+    position: absolute;
+    top: 200px;
+    left: 1253px;
+    padding-top: 100px;
+    padding-left: 20px;
+}
+.review7 img{
+    position: absolute;
+    top: -40%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.review7 p{
+    text-align: center;
+}
+.review7 .starcon{
+    transform: scale(85%);
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* ------review8------ */
+.review8{
+    width: 445px;
+    height: 228px;
+    background-color: #fff;
+    border-radius: 15px;
+    position: absolute;
+    top: 424px;
+    left: 1288px;
+    padding-top: 60px;
+    padding-left: 237px;
+}
+.review8 img{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+/* ------review9------ */
+.review9{
+    display: flex;
+    position: absolute;
+    top: 720px;
+    left: 1253px;
+}
+.review9 .box1{
+    width: 273px;
+    height: 228px;
+    background-color: #F2F2F2;
+    border-radius: 15px 0 0 15px;
+    padding-top: 38px;
+    padding-left: 22px;
+}
+.review9 .box2{
+    width: 169px;
+    height: 228px;
+    background-color: #fff;
+    border-radius: 0 15px 15px 0;
+    position: relative;
+}
+.review9 img{
+    position: absolute;
+    top: 25px;
+    left: 20px;
+}
+
+/* ----------------- 캠페인 -----------------*/
+.campaign {
+    height: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    padding-top: 300px;
+}
+
+.camcon {
+    text-align: center;
+}
+
+.camcon ul {
+    width: 1425px;
+    display: flex;
+    justify-content: center;
+}
+
+.camcon ul li {
+    padding-top: 30px;
+    width: 268px;
+    height: 268px;
+    margin-left: 94px;
+}
+
+.camcon ul li:hover {
+    color: #000;
+    border-radius: 50%;
+    background-color: #09D600;
+}
+
+.camcon ul li:first-child {
+    margin-left: 0px;
+}
+
+.camcon ul li:hover button a {
+    color: #000;
+}
+
+.camcon img {
+    width: 80px;
+    margin-bottom: 20px;
+}
+
+.camcon span {
+    color: #fff;
+    display: block;
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.camcon p {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 230px;
+}
+
+.camcon button {
+    border: none;
+    background: none;
+    color: #A1A1A1;
+    font-size: 14px;
+    font-weight: 400;
+}
+/* ----------------- footer -----------------*/
+footer {
+    width: 100%;
+    height: 388px;
+    background-color: #0F0F0F;
+    padding: 0 20px;
+}
+
+.tit {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.fonnter_con {
+    margin: 0 auto;
+    width: 1206px;
+    height: 100%;
+    padding-top: 109px;
+    display: flex;
+}
+
+footer .footer_info {
+    width: 529px;
+    height: 136px;
+    display: flex;
+    color: #fff;
+}
+
+.footer_info .down_app {
+    width: 129px;
+    height: 48px;
+    margin-right: 79px;
+}
+
+.footer_info .down_app img {
+    width: 100%;
+}
+
+.footer_info .foot_cscenter {
+    margin-right: 25px;
+    font-weight: 500;
+}
+
+.talk {
+    display: flex;
+    font-size: 14px;
+}
+
+.talk img {
+    margin-top: 5px;
+    margin-left: 6px;
+    width: 16px;
+    height: 16px;
+}
+
+.foot_menu {
+    color: #A7A7A7;
+    font-size: 14px;
+    letter-spacing: -2%;
+    margin-left: 30px;
+    display: flex;
+}
+
+address {
+    font-style: normal;
+}
+
+.foot_menu .copyright {
+    margin-top: 13px;
+}
+
+.foot_menu .guidelines {
+    color: #fff;
+    margin-left: 70px;
+    padding-bottom: 15px;
+}
+
+.foot_menu .guidelines a {
+    font-size: 16px;
+    font-weight: 600;
+    display: block;
+}
+
+.sns_area {
+    width: 185px;
+}
+
+.sns {
+    display: flex;
+    margin-top: 22px;
+}
+
+.sns li {
+    padding-top: 3px;
+    padding-right: 11px;
+}
+/* 팝업 */
+.popcon .swiper{
+    width: 380px;
+    height: 420px;
+}
+#popup {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 1;
+}
+
+#popup.add {
+    display: block;
+}
+.popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1137px;
+    height: 641px;
+    background-color: #111;
+}
+
+.preview {
+    margin-left: 50px;
+    margin-top: 94px;
+}
+
+.preview li {
+    width: 72px;
+    height: 72px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.preview li.addli {
+    border: 2px solid #fff;
+}
+
+.preview li img {
+    width: 100%;
+}
+
+.swiper_dd {
+    width: 380px;
+    height: 380px;
+    margin-top: 94px;
+    margin-left: 33px;
+    overflow: hidden; /* 슬라이드 초과 영역 숨김 */
+}
+
+.swiper-slide img{
+    width: 380px;
+    height: 380px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.swiper_dd .swiper-pagination-bullet {
+    background-color: #09D600;
+    border: none;
+}
+
+.popcon {
+    display: flex;
+}
+
+.poptxt {
+    width: 413px;
+    height: 360px;
+    margin-right: 128px;
+    margin-top: 95px;
+    color: #fff;
+}
+
+.poptxt li:first-child {
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.poptxt li:nth-child(2) {
+    padding-top: 15px;
+    font-size: 16px;
+}
+
+.poptxt li:nth-child(3) {
+    padding-top: 20px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.poptxt li:nth-child(4) {
+    padding-bottom: 5px;
+    padding-top: 58px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.poptxt li:nth-child(5) {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.poptxt li:nth-child(6) {
+    text-align: center;
+    width: 300px;
+    height: 34px;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 46px;
+    margin-left: -44px;
+    margin-bottom: 12px;
+}
+
+.poptxt li:nth-child(6) a {
+    margin-left: 20px;
+
+    display: inline-block;
+    padding: 10px 25px;
+    border: 1px solid #fff;
+}
+
+.poptxt li:nth-child(6) a:last-child {
+    margin-left: 0;
+}
+
+.poptxt li:nth-child(6) a:hover {
+    font-weight: 500;
+    color: #000;
+    background-color: #09D600;
+    border: 1px solid #09D600;
+}
+
+.poptxt li:last-child {
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+.close {
+    position: relative;
+}
+
+.close img {
+    cursor: pointer;
+    position: absolute;
+    top: -475px;
+    right: 35px;
+    width: 30px;
+}
+
+.close img:hover {
+    transition: 0.4s;
+    transform: rotate(90deg);
+}
+
+
+
+.layer-open{overflow:hidden;}
